@@ -37,6 +37,7 @@ namespace TVP_Lab2
                 mousePressed = true;
             }
         }
+        
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {

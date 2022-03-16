@@ -182,19 +182,19 @@ namespace TVP_Lab2
             switch (this.status)
             {
                 case Utils.MotorStatus.On:
-                    image = Image.FromFile("D:/pictures/EV3MotorOn.png");
+                    image = Image.FromFile("../../../EV3Motor/assets/EV3MotorOn.png");
                     break;
                 case Utils.MotorStatus.Off:
-                    image = Image.FromFile("D:/pictures/EV3MotorOff.png");
+                    image = Image.FromFile("../../../EV3Motor/assets/EV3MotorOff.png");
                     break;
                 case Utils.MotorStatus.OnForSeconds:
-                    image = Image.FromFile("D:/pictures/EV3MotorOnForSeconds.png");
+                    image = Image.FromFile("../../../EV3Motor/assets/EV3MotorOnForSeconds.png");
                     break;
                 case Utils.MotorStatus.OnForDegrees:
-                    image = Image.FromFile("D:/pictures/EV3MotorOnForDegrees.png");
+                    image = Image.FromFile("../../../EV3Motor/assets/EV3MotorOnForDegrees.png");
                     break;
                 case Utils.MotorStatus.OnForRotations:
-                    image = Image.FromFile("D:/pictures/EV3MotorOnForRotations.png");
+                    image = Image.FromFile("../../../EV3Motor/assets/EV3MotorOnForRotations.png");
                     break;
                 default:
                     throw new Exception("Status must be initialized");
