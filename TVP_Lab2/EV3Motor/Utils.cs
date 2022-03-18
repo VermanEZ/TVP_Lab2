@@ -16,7 +16,6 @@ namespace TVP_Lab2
         public static Size lowerButtonSize = new Size(62, 50);
         public static Size directionButtonOffset = new Size(103, 115);
         public static Size timerButtonOffset = directionButtonOffset + new Size(lowerButtonSize.Width, 0);
-        public static Size thirdButtonOffset = timerButtonOffset + new Size(lowerButtonSize.Width, 0);
         public static Size sliderMenuSize = new Size(45, 140);
         public static Size sliderSize = new Size(sliderMenuSize.Width, sliderMenuSize.Height / 20);
         public enum MotorStatus

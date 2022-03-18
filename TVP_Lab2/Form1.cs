@@ -10,9 +10,9 @@ namespace TVP_Lab2
             InitializeComponent();
             this.form_graphics = this.CreateGraphics();
             mousePressed = false;
-            motor1 = new EV3Motor(this.form_graphics, 0.75, new Point(100, 600), Utils.MotorStatus.OnForRotations);
-            motor2 = new EV3Motor(this.form_graphics, 1.4, new Point(700, 440), Utils.MotorStatus.OnForDegrees);
-            motor3 = new EV3Motor(this.form_graphics, 2, new Point(10, 10), Utils.MotorStatus.Off);
+            motor1 = new EV3Motor(this.form_graphics, new Point(100, 600), 0.75, Utils.MotorStatus.OnForRotations, 30, 80);
+            motor2 = new EV3Motor(this.form_graphics, new Point(700, 440), 1.4, Utils.MotorStatus.OnForDegrees, 20, 60);
+            motor3 = new EV3Motor(this.form_graphics, new Point(10, 10), 2, Utils.MotorStatus.Off, 10, 70);
         }
 
         private void Form1_Shown(object sender, EventArgs e)

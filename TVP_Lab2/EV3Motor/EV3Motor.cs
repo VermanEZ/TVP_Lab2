@@ -22,7 +22,7 @@ namespace TVP_Lab2
         public LowerButton thirdButton;
         public Graphics g;
 
-        public EV3Motor(Graphics graphics, double sizeCoef, Point pos, Utils.MotorStatus status)
+        public EV3Motor(Graphics graphics, Point pos, double sizeCoef = 1, Utils.MotorStatus status = Utils.MotorStatus.Off, int directionButtonValue = 0, int timerButtonValue = 0)
         {
             this.sizeCoef = sizeCoef;
             this.pos = pos;
@@ -30,9 +30,8 @@ namespace TVP_Lab2
             this.SetImage();
             // Buttons
             this.statusButton = new StatusButton(this);
-            this.directionButton = new LowerButton(this, 10, Utils.directionButtonOffset);
-            this.timerButton = new LowerButton(this, 100, Utils.timerButtonOffset);
-            this.thirdButton = new LowerButton(this, 30, Utils.thirdButtonOffset);
+            this.directionButton = new LowerButton(this, directionButtonValue, Utils.directionButtonOffset);
+            this.timerButton = new LowerButton(this, timerButtonValue, Utils.timerButtonOffset);
             this.g = graphics;
             AllEV3Motors.Add(this);
         }
@@ -94,50 +93,22 @@ namespace TVP_Lab2
                     this.CloseAllMenus();
                     this.directionButton.sliderMenu.isOpen = true;
                     this.directionButton.value = this.directionButton.sliderMenu.Click(cursorPos);
-                    
-                    //this.directionButtonValue = -(int)((cursorPos.Y - this.directionButtonSlider.Top) / (double)(this.directionButtonSlider.Height) * 200 - 100);
-                    //Point slider_pos = this.directionButtonSlider.Location + new Size(0,
-                    //    (this.directionButtonSlider.Bottom - this.directionButtonSlider.Top) / 200 * (-this.directionButtonValue + 100));
-                    //this.g.FillRectangle(Brushes.WhiteSmoke, this.directionButtonSlider);
-                    //this.g.DrawRectangle(Pens.Black, this.directionButtonSlider);
-                    //this.g.FillRectangle(Brushes.Black, new Rectangle(slider_pos, this.sliderSize));
                 }
                 else if (this.directionButton.ContainsCursor(cursorPos))
                 {
                     this.CloseAllMenus();
                     this.directionButton.sliderMenu.isOpen = true;
-                    
-                    //Point slider_pos = this.directionButtonSlider.Location + new Size(0,
-                    //    (this.directionButtonSlider.Bottom - this.directionButtonSlider.Top) / 200 * (-this.directionButtonValue + 100));
-                    //this.g.FillRectangle(Brushes.WhiteSmoke, this.directionButtonSlider);
-                    //this.g.DrawRectangle(Pens.Black, this.directionButtonSlider);
-                    //this.g.FillRectangle(Brushes.Black, new Rectangle(slider_pos, this.sliderSize));
-                    //this.directionButton.sliderMenu.isOpen = true;
                 }
                 else if (this.timerButton.sliderMenu.isOpen && this.timerButton.sliderMenu.ContainsCursor(cursorPos))
                 {
                     this.CloseAllMenus();
                     this.timerButton.sliderMenu.isOpen = true;
                     this.timerButton.value = this.timerButton.sliderMenu.Click(cursorPos);
-                    
-                    //this.timerButtonValue = -(int)((cursorPos.Y - this.timerButtonSlider.Top) / (double)(this.timerButtonSlider.Height) * 200 - 100);
-                    //Point slider_pos = this.timerButtonSlider.Location + new Size(0,
-                    //    (this.timerButtonSlider.Bottom - this.timerButtonSlider.Top) / 200 * (-this.timerButtonValue + 100));
-                    //this.g.FillRectangle(Brushes.WhiteSmoke, this.timerButtonSlider);
-                    //this.g.DrawRectangle(Pens.Black, this.timerButtonSlider);
-                    //this.g.FillRectangle(Brushes.Black, new Rectangle(slider_pos, this.sliderSize));
                 }
                 else if (this.timerButton.ContainsCursor(cursorPos))
                 {
                     this.CloseAllMenus();
                     this.timerButton.sliderMenu.isOpen = true;
-                    
-                    //Point slider_pos = this.timerButtonSlider.Location + new Size(0,
-                    //    (this.timerButtonSlider.Bottom - this.timerButtonSlider.Top) / 200 * (-this.timerButtonValue + 100));
-                    //this.g.FillRectangle(Brushes.WhiteSmoke, this.timerButtonSlider);
-                    //this.g.DrawRectangle(Pens.Black, this.timerButtonSlider);
-                    //this.g.FillRectangle(Brushes.Black, new Rectangle(slider_pos, this.sliderSize));
-                    //this.timerButton.sliderMenu.isOpen = true;
                 }
                 else
                 {

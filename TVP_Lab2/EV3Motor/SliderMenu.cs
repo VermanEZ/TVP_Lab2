@@ -12,7 +12,7 @@ namespace TVP_Lab2
         public bool isOpen;
         public Rectangle slider;
         public int min, max;
-        public SliderMenu(EV3Motor parent, Size offset, int value, int min = 0, int max = 360)
+        public SliderMenu(EV3Motor parent, Size offset, int value, int min = -100, int max = 100)
         {
             Size offsetWithoutResizing = offset + new Size(0, Utils.lowerButtonSize.Height);
             this.parent = parent;
@@ -36,7 +36,6 @@ namespace TVP_Lab2
         public void SetSlider(int value)
         {
             double height = this.offset.Height + this.size.Height - this.size.Height * (value - this.min) / (double)(this.max - this.min);
-            Debug.WriteLine(height);
             this.slider = new Rectangle(this.parent.pos + new Size((int)(this.offset.Width), (int)(height)),
                                         new Size((int)(Utils.sliderSize.Width * this.parent.sizeCoef), (int)(Utils.sliderSize.Height * this.parent.sizeCoef)));
 
